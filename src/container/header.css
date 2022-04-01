@@ -1,0 +1,66 @@
+@charset "UTF-8";
+/* color */
+/*https://ant.design/components/overview/?ref=designrevision.com*/
+/* 변수 */
+/* 선택자와 속성을 재활용 : 선언할 때는 '@mixin'으로 시작하고, 호출할 때는 '@include'을 사용*/
+.box {
+  border-radius: 10px;
+}
+
+header .inner .wrap_account .box_account:after, header .inner .wrap_account:after {
+  display: block;
+  content: '';
+  clear: both;
+}
+
+/* 확장/상속 extend : ​@extend하면 하나의 선택기에서 다른 선택기로 CSS 속성 집합을 공유*/
+.success {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+.success {
+  border-color: green;
+}
+
+/*연산자 : +, -, *, /, %*/
+header {
+  height: 64px;
+  padding: 0 50px;
+  color: #000000d9;
+  line-height: 64px;
+  background: #001529;
+}
+
+header .inner {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+header .inner .wrap_account .logo {
+  float: left;
+  width: 120px;
+  height: 31px;
+  margin: 16px 24px 16px 0;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+header .inner .wrap_account .logo a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  color: #fff;
+}
+
+header .inner .wrap_account .box_account {
+  float: right;
+}
+
+header .inner .wrap_account .box_account a {
+  float: left;
+}
+/*# sourceMappingURL=header.css.map */

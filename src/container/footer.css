@@ -8,4 +8,8 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
-/*# sourceMappingURL=index.css.map */
+
+footer {
+  text-align: center;
+}
+/*# sourceMappingURL=footer.css.map */

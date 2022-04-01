@@ -1,0 +1,21 @@
+
+@mixin btnBg($color) {
+  border-color: $color;
+  background: $color;
+}
+
+.btn{
+    display: inline-block;
+    height: 32px;
+    padding: 4px 15px;
+    font-size: 14px;
+    color: #fff;
+    transition: all .3s cubic-bezier(.645,.045,.355,1);
+    &.colorBule{
+        @include btnBg(#40a9ff);
+        &:hover{
+            @include btnBg(#1890ff);
+        }
+    }
+}
+
