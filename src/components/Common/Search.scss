@@ -1,13 +1,128 @@
+@charset "UTF-8";
 .wrap_sch{
-    
     .box_search{
-        .area_dropdown{
-            .selected_option{
-
+            float: right;
+            position: relative;
+            width: 345px;
+            height: 37px;
+            margin-right: 40px;
+            border: 1px solid #001529;
+            border-right: 0;
+            background-color: #fff;
+            box-sizing: border-box;
+            &::after{
+                content: '';
+                clear: both;
             }
+        .area_dropdown{
+            float: left;
+            width: 81px;
+            box-sizing: border-box;
+            .selected_option{
+                position: relative;
+                display: block;
+                width: 100%;
+                height: 35px;
+                padding-left: 10px;
+                box-sizing: border-box;
+                background-color: #fefefe;
+                border-right:1px solid #001529;
+                color: #001529;
+                font-size: 12px;
+                text-align: left;
+                line-height: 35px;
+                text-decoration: none;
+                .sp_common{
+                    display: inline-block;
+                    overflow: hidden;
+                    font-size: 1px;
+                    line-height: 100px;
+                    background-image: url(https://ssl.pstatic.net/static/blog/sp_common_0ef8f3b2.png);
+                    &.icon_arrow{
+                        position: absolute;
+                        top: 15px;
+                        right: 11px;
+                        width: 8px;
+                        height: 4px;
+                        background-position: -1011px -332px;
+                    }
+                }
+                &[aria-expanded="true"]{
+                    /* 버튼 펼침 */
+                    .sp_common{
+                        &.icon_arrow{
+                            background-position: -1043px -332px;
+                        }
+                    }
+                }
+            }
+            .dropdown_select{
+                position: absolute;
+                top: 36px;
+                left:-1px;
+                width: 82px;
+                padding: 8px 0 7px 0;
+                border: 1px solid #001529;
+                border-top: none;
+                background-color: #fff;
+                text-align: left;
+                z-index: 10;
+                .item{
+                    display: block;
+                    padding: 4px 0 3px 10px;
+                    font-size: 12px;
+                    line-height: 1.2;
+                    color: inherit;
+                }
+            }
+            
         }
         .input_sch{
-
+            float: left;
+            width: 214px;
+            height: 35px;
+            padding-left: 13px;
+            padding-right: 0;
+            border: none;
+            border-radius: 0;
+            font-size: 12px;
+            color: #979797;
+            line-height: 37px;
+            -webkit-appearance: none;
+        }
+        .btn{
+            float: left;
+            word-break: keep-all;
+            position: relative;
+            width: 36px;
+            height: 35px;
+            padding:0;
+            margin:0;
+            border: 1px solid #2491f7;
+            border-left-width: 0;
+            border-radius: 0;
+            background-color: #2491f7;
+            &::before{
+                position: absolute;
+                right: 8px;
+                bottom: 12px;
+                width: 7px;
+                height: 1px;
+                background-color: #fff;
+                transform: rotate(45deg);
+                clip: rect(0,6px,1px,0);
+                content: "";
+            }
+            &::after{
+                position: absolute;
+                top: 10px;
+                left: 11px;
+                width: 10px;
+                height: 10px;
+                border: 1px solid #fff;
+                border-radius: 10px;
+                content: "";
+            }
         }
     }
 }

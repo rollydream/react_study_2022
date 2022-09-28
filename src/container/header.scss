@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* color */
 /*https://ant.design/components/overview/?ref=designrevision.com*/
 
@@ -41,42 +42,41 @@
 /*연산자 : +, -, *, /, %*/
 
 header{
-    height: 64px;
-    padding: 0 50px;
+    padding-bottom: 10px!important;
     color: #000000d9;
     line-height: 64px;
     background: #001529;
     .inner{
         max-width:1440px;
+        min-width: 768px;
         margin:0 auto;
         .wrap_account{
+            padding:0 40px;
+            display: flex;
+            align-items: center;
             .logo{
-                float: left;
-                width: 120px;
-                height: 31px;
-                margin: 16px 24px 16px 0;
-                background: rgba(255, 255, 255, 0.3);
+                display: flex;
+                align-items: center;
+                width: 30px;
+                height: 30px;
                 a{
                     display:inline-block;
                     width:100%;
                     height:100%;
-                    background-image:url('');
+                    background-image:url("/src_assets/image/common/svg/icon_react_logo_01.svg");
                     background-repeat:no-repeat;
                     background-size:100% 100%;
-                    color:#fff
+                    color:rgb(101, 13, 13)
                 }
             }
             .box_account{
-                float: right;
+                display: inline-flex;
+                justify-content :space-between;
+                width:250px;
+                margin-left: auto;
                 a{
-                    float: left;
+                    color:#fff
                 }
-                &:after{
-                   @extend %clear;
-                }
-            }
-            &:after{
-               @extend %clear;
             }
         }
         

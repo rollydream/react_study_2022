@@ -57,3 +57,14 @@ strong {font-weight: normal}
 em {font-style:normal;}
 sub, sup{line-height: 0;}
 
+html,body{height: 100%;}
+
+#root{height: 100%;}
+
+legend{
+	position:absolute;
+	left:-9999px;
+	font-size:0;
+	overflow:hidden;
+}
+

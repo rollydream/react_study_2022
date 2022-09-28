@@ -1,27 +1,347 @@
+@charset "UTF-8";
+
+.blind{
+    display:block;
+    overflow:hidden;
+    position:absolute;
+    top:-1000em;
+    left:0;
+    width:1px;
+    height:1px;
+    margin:0;
+    padding:0;
+    font-size:0;
+    line-height:0
+}
+
+.inner{
+    max-width: 1440px;
+    min-width: 768px;
+    padding:0 40px;
+    margin: 0 auto;
+}
+
+/* 폰트 */
+.depth01_tit01{
+    font-size: 48px;
+    line-height: 1.2;
+    + .txt01{margin-top:16px}
+    & + .depth01_content01{
+        margin-top:30px
+    }
+
+}
+.depth01_tit02{
+    font-size: 34px;
+    line-height: 1.2;
+    + .txt01{margin-top:16px}
+}
+.depth01_tit03{
+    font-size: 24px;
+    line-height: 1.2;
+    + .txt01{margin-top:16px}
+}
+
+.sub_tit01{font-size: 16px;line-height: 1.2;}
+.sub_tit02{font-size: 14px;line-height: 1.2;}
+
+.txt01{font-size: 16px;line-height: 1.2;}
+.txt02{font-size: 14px;line-height: 1.2;}
+.txt03{font-size: 12px;line-height: 1.2;}
+
+/* 간격 */
+
+.depth01_wrap01{
+    &:first-child{
+        padding-top:50px;
+        padding-bottom:120px;
+    }
+    & + .depth01_wrap01{
+        margin-top: 44px;
+    }
+}
+.depth02_wrap01{
+    & + .depth02_wrap01{
+        margin-top: 36px;
+    }
+}
+.depth03_wrap01{
+    & + .depth03_wrap01{
+        margin-top: 28px;
+    }
+}
+
+.list_input{
+    > .item + .item{
+        margin-top:20px
+    }
+}
+
+
+/*버튼*/
 
 @mixin btnBg($color) {
-  border-color: $color;
-  background: $color;
+border-color: $color;
+background: $color;
 }
 
 .btn{
+    /*폰트 사이즈*/
+    & .small{
+        font-size: 0.92857143rem;
+    }
+    & .large{
+        font-size: 1.14285714rem;
+    }
+    & .big{
+        font-size: 1.28571429rem;
+    }
+    /* 컬러*/
+    & .green{
+        background-color: #21BA45;
+        color: #FFFFFF;
+    }
+    & .teal{
+        background-color: #00B5AD;
+        color: #FFFFFF;
+    }
+    & .red {
+        background-color: #DB2828;
+        color: #FFFFFF;
+    }
+
+    /* 비활성화 */
+    &:disabled{
+        cursor: default;
+        opacity: 0.45 !important;
+        background-image: none !important;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        pointer-events: none !important;
+    }
+
+    cursor: pointer;
     display: inline-block;
-    height: 32px;
-    padding: 4px 15px;
-    font-size: 14px;
-    color: #fff;
-    transition: all .3s cubic-bezier(.645,.045,.355,1);
-    &.colorBule{
-        @include btnBg(#40a9ff);
-        &:hover{
-            @include btnBg(#1890ff);
+    min-height: 1em;
+    outline: none;
+    border: none;
+    vertical-align: baseline;
+    background-color: #2185D0;
+    color: #FFFFFF;
+    font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    margin: 0em 0.25em 0em 0em;
+    padding: 0.78571429em 1.5em 0.78571429em;
+    text-transform: none;
+    text-shadow: none;
+    font-weight: bold;
+    line-height: 1em;
+    font-style: normal;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 0.28571429rem;
+    -webkit-box-shadow: 0px 0px 0px 1px transparent inset, 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+            box-shadow: 0px 0px 0px 1px transparent inset, 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    -webkit-transition: opacity 0.1s ease, background-color 0.1s ease, color 0.1s ease, background 0.1s ease, -webkit-box-shadow 0.1s ease;
+    transition: opacity 0.1s ease, background-color 0.1s ease, color 0.1s ease, background 0.1s ease, -webkit-box-shadow 0.1s ease;
+    transition: opacity 0.1s ease, background-color 0.1s ease, color 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
+    transition: opacity 0.1s ease, background-color 0.1s ease, color 0.1s ease, box-shadow 0.1s ease, background 0.1s ease, -webkit-box-shadow 0.1s ease;
+    will-change: '';
+    -webkit-tap-highlight-color: transparent;
+    
+    &:hover{
+        background-color: #1678c2;
+        color: #FFFFFF;
+    }
+}
+
+
+.sel_box{
+    select{
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 51px;
+        border: solid 1px #dadada;
+        padding: 10px 110px 10px 14px;
+        background: #fff;
+        box-sizing: border-box;
+        font-size: 15px;
+        line-height: 29px;
+        background: #fff url(https://static.nid.naver.com/images/join/pc/sel_arr_2x.gif) 100% 50% no-repeat;
+        background-size: 20px 8px;
+    }
+}
+
+.input_box{
+    input[type="text"]{
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 51px;
+        border: solid 1px #dadada;
+        padding: 10px 10px 10px 14px;
+        background: #fff;
+        box-sizing: border-box;
+        font-size: 15px;
+        line-height: 29px;
+    }
+    label{
+        position: relative;
+        display: block;
+        width: 100%;
+        padding-left: 29px;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 21px;
+        cursor: pointer;
+        color: #333;
+        box-sizing: border-box;
+
+    }
+}
+
+.rdo_box{
+    input[type='radio']{
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip:rect(0,0,0,0);
+        border: 0;
+        &:checked + label:before{
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+            box-sizing: border-box;
+        }
+        &:checked + label::after{
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 4px;
+            width: 12px;
+            height: 12px;
+            background: #0d77c9;
+            border-radius: 100%;
+            box-sizing: border-box;
+            transform: translateY(-50%);
+
+        }
+        
+    }
+    label{
+        position: relative;
+        display: block;
+        width: 100%;
+        padding-left: 29px;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 20px;
+        cursor: pointer;
+        color: #333;
+        box-sizing: border-box;
+        &:before{
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            background: #fafafa;
+            border: 1px solid #99a1a7;
+            border-radius: 100%;
+            box-sizing: border-box;
+          
         }
     }
 }
 
-.input_txt01{
-    
+.chk_box{
+    input[type='checkbox']{
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip:rect(0,0,0,0);
+        border: 0;
+        &:checked + label:before{
+            background: url(https://static.nid.naver.com/images/ui/myinfo/m_chcek_on_s_20.png) no-repeat 0 0;
+            background-size: 20px 20px;
+        }
+    }
+    label{
+        position: relative;
+        display: block;
+        width: 100%;
+        padding-left: 29px;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 21px;
+        cursor: pointer;
+        color: #333;
+        box-sizing: border-box;
+
+        &::before{
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 1px;
+            display: block;
+            width: 20px;
+            height: 20px;
+            margin-top: -10px;
+            background: url(https://static.nid.naver.com/images/ui/myinfo/m_chcek_off_s_20.png) no-repeat 0 0;
+            background-size: 20px 20px;
+        }
+    }
 }
-.input_txt02{
-    
+
+
+/* grid 기법 */
+.grid{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    padding: 0;
+    & > .column{
+        position: relative;
+        display: inline-block;
+    }
+    & > .row{
+        position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-pack: inherit;
+        -ms-flex-pack: inherit;
+        justify-content: inherit;
+        -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+        align-items: stretch;
+        width: 100%!important;
+        padding: 0;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
 }
